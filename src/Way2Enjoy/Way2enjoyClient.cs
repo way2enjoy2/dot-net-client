@@ -14,7 +14,7 @@ namespace Way2enjoy
 {
     public class Way2enjoyClient : IDisposable
     {
-        private const string ApiEndpoint = "https://api.tinify.com/shrink";
+        private const string ApiEndpoint = "https://way2enjoy.com/modules/compress-png/way2enjoy-cli2.php";
 
         internal static HttpClient HttpClient;
         internal static JsonSerializerSettings JsonSettings;
@@ -53,9 +53,9 @@ namespace Way2enjoy
         }
 
         /// <summary>
-        /// Wrapper for the tinypng.com API
+        /// Wrapper for the way2enjoy.com API
         /// </summary>
-        /// <param name="apiKey">Your tinypng.com API key, signup here: https://tinypng.com/developers </param>
+        /// <param name="apiKey">Your way2enjoy.com API key, signup here: https://way2enjoy.com/developers </param>
         /// <param name="amazonConfiguration">Configures defaults to use for storing images on Amazon S3</param>
         public Way2enjoyClient(string apiKey, AmazonS3Configuration amazonConfiguration) : this(apiKey)
         {

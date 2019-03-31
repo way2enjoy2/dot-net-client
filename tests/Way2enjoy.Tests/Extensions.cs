@@ -23,7 +23,7 @@ namespace Way2enjoy.Tests
                     Size = 16646,
                     Type = "image/jpeg",
                     Ratio = 0.9232f,
-                    Url = "https://api.tinify.com/output"
+                    Url = "https://way2enjoy.com/modules/compress-png/way2enjoy-cli2.php"
                 }
             };
             var compressResponseMessage = new HttpResponseMessage
@@ -31,10 +31,10 @@ namespace Way2enjoy.Tests
                 StatusCode = System.Net.HttpStatusCode.Created,
                 Content = new StringContent(JsonConvert.SerializeObject(content)),
             };
-            compressResponseMessage.Headers.Location = new Uri("https://api.tinify.com/output");
+            compressResponseMessage.Headers.Location = new Uri("https://way2enjoy.com/modules/compress-png/way2enjoy-cli2.php");
             compressResponseMessage.Headers.Add("Compression-Count", "99");
 
-            fakeResponse.AddFakePostResponse(new Uri("https://api.tinify.com/shrink"), compressResponseMessage);
+            fakeResponse.AddFakePostResponse(new Uri("https://way2enjoy.com/modules/compress-png/way2enjoy-cli2.php"), compressResponseMessage);
             return fakeResponse;
         }
 
@@ -47,7 +47,7 @@ namespace Way2enjoy.Tests
                 StatusCode = System.Net.HttpStatusCode.BadRequest,
                 Content = new StringContent(JsonConvert.SerializeObject(errorApiObject))
             };
-            fakeResponse.AddFakePostResponse(new Uri("https://api.tinify.com/shrink"), compressResponseMessage);
+            fakeResponse.AddFakePostResponse(new Uri("https://way2enjoy.com/modules/compress-png/way2enjoy-cli2.php"), compressResponseMessage);
             return fakeResponse;
         }
 
@@ -60,7 +60,7 @@ namespace Way2enjoy.Tests
                 StatusCode = System.Net.HttpStatusCode.OK
             };
 
-            fakeResponse.AddFakeGetResponse(new Uri("https://api.tinify.com/output"), outputResponseMessage);
+            fakeResponse.AddFakeGetResponse(new Uri("https://way2enjoy.com/modules/compress-png/way2enjoy-cli2.php"), outputResponseMessage);
             return fakeResponse;
         }
 
@@ -72,7 +72,7 @@ namespace Way2enjoy.Tests
                 StatusCode = System.Net.HttpStatusCode.InternalServerError
             };
 
-            fakeResponse.AddFakeGetResponse(new Uri("https://api.tinify.com/output"), outputResponseMessage);
+            fakeResponse.AddFakeGetResponse(new Uri("https://way2enjoy.com/modules/compress-png/way2enjoy-cli2.php"), outputResponseMessage);
             return fakeResponse;
         }
 
@@ -87,7 +87,7 @@ namespace Way2enjoy.Tests
             resizeMessage.Headers.Add("Image-Width", "150");
             resizeMessage.Headers.Add("Image-Height", "150");
 
-            fakeResponse.AddFakePostResponse(new Uri("https://api.tinify.com/output"), resizeMessage);
+            fakeResponse.AddFakePostResponse(new Uri("https://way2enjoy.com/modules/compress-png/way2enjoy-cli2.php"), resizeMessage);
             return fakeResponse;
         }
 
@@ -112,7 +112,7 @@ namespace Way2enjoy.Tests
             };
             //amazonMessage.Headers.Add("Location", "https://s3-ap-southeast-2.amazonaws.com/way2enjoy-test-bucket/path.jpg");
 
-            fakeResponse.AddFakePostResponse(new Uri("https://api.tinify.com/output"), amazonMessage);
+            fakeResponse.AddFakePostResponse(new Uri("https://way2enjoy.com/modules/compress-png/way2enjoy-cli2.php"), amazonMessage);
             return fakeResponse;
         }
     }

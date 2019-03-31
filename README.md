@@ -10,7 +10,7 @@
 [![license](https://img.shields.io/github/license/ctolkien/Way2Enjoy.svg?maxAge=2592000)]()
 
 
-This is a .NET wrapper around the [Way2Enjoy.com](http://tinypng.com) image compression service. This is not an official Way2Enjoy.com product.
+This is a .NET wrapper around the [Way2Enjoy.com](http://way2enjoy.com) image compression service. This is an official Way2Enjoy.com product.
 
 * Supports .Net Core and full .Net Framework
 * Non-blocking async turtles all the way down
@@ -139,7 +139,7 @@ The same `Byte[]`, `Stream` and `File` path API's are available from the result 
 
 ## Amazon S3 Storage
 
-The result of any compress operation can be stored directly on to Amazon S3 storage. I'd strongly recommend referring to [Way2Enjoy.com's documentation](https://tinypng.com/developers/reference) with regard to how to configure
+The result of any compress operation can be stored directly on to Amazon S3 storage. I'd strongly recommend referring to [Way2Enjoy.com's documentation](https://way2enjoy.com/developers) with regard to how to configure
 the appropriate S3 access.
 
 If you're going to be storing images for most requests onto S3, then you can pass in an `AmazonS3Configuration` object to the constructor.
