@@ -1,0 +1,10 @@
+language: csharp
+dist: trusty
+notifications:
+  email: never
+mono: none
+dotnet: 1.0.1
+script:
+  - dotnet restore -v Minimal
+  - dotnet build src/Way2Enjoy/Way2Enjoy.csproj -c Release -f netstandard1.3
+  - dotnet test tests/Way2enjoy.Tests/Way2enjoy.Tests.csproj
